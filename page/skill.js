@@ -9,9 +9,6 @@ import Figma from "../assets/image/figma.png";
 import Rust from "../assets/image/rust.jpeg";
 
 const skill = () => {
-
-
-
   const skils = [
     { id: 1, nama: "Angular", image: Angularicon, deskrip: " adebbefb" },
     { id: 2, nama: "Tailwind", image: Tailwindicon, deskrip: " adebbefb" },
@@ -21,30 +18,19 @@ const skill = () => {
     { id: 6, nama: "Rust", image: Rust, deskrip: " adebbefb" },
   ];
 
-  // const listitem = skill.maps()
+  const filter = { id: [], nama: [] };
 
-
-  // const listItems = skils.map((popo)=>
-  //    <li key={popo.id}>{popo.nama}</li>
-  //   );
 
   return (
     <View>
       <Text style={styles.skilss}>skill</Text>
       <View style={styles.wrapskils}>
-        {skils.map((object) => {
-          return (
-            <>
-              <View style={styles.skils} key={object}>
-                <Image
-                  source={object.image}
-                  style={styles.imageskils}
-                />
-                <Text>{object.nama} </Text>
-              </View>
-            </>
-          );
-        })}
+        {skils.map((post) => (
+          <View style={styles.skils} key={post.id}>
+          <Image source={post.image} style={styles.imageskils} key={post.nama}/>
+          <Text key={post.images}>{post.nama}</Text>
+        </View>
+        ))}
       </View>
     </View>
   );
@@ -85,5 +71,9 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     marginTop: 5,
+  },
+
+  popopo: {
+    flexDirection: "row",
   },
 });
